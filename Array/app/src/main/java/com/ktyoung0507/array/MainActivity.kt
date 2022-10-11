@@ -34,9 +34,9 @@ class MainActivity : AppCompatActivity() {
         intArray.set(9, 200)
 
         var seventhValue = intArray[6]
-        Log.d("Array","8번째 intArray의 값은 ${seventhValue}입니다.")
+        Log.d("Array","7번째 intArray의 값은 ${seventhValue}입니다.")
         var tenthValue = intArray.get(9)
-        Log.d("Array","8번째 intArray의 값은 ${tenthValue}입니다.")
+        Log.d("Array","10번째 intArray의 값은 ${tenthValue}입니다.")
 
         Log.d("Array","첫 번째 dayArray의 값은 ${dayArray[0]}입니다.")
         Log.d("Array","여섯 번째 dayArray의 값은 ${dayArray.get(5)}입니다.")
