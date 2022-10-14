@@ -4,12 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusable="auto"
+    android:focusableInTouchMode="true"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ellipsize="marquee"
+        android:focusable="auto"
+        android:focusableInTouchMode="true"
+        android:singleLine="true"
         android:text="@string/String_01"
+        android:textColor="@color/color_red"
+        android:textSize="@dimen/text_dimen"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
