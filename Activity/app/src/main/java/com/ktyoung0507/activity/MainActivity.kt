@@ -13,7 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val intent = Intent(this, subActivity::class.java)
-
+        intent.putExtra("from1", "Hello Bundle")
+        intent.putExtra("from2", 2022)
         binding.btnStart.setOnClickListener { startActivity(intent) }
     }
 }
