@@ -13,6 +13,12 @@ class MainActivity : AppCompatActivity() {
 
     fun setFragment() {
         val listFragment: ListFragment = ListFragment()
+
+        var bundle = Bundle()
+        bundle.putString("key1", "List Fragment")
+        bundle.putInt("key2", 20220101)
+        listFragment.arguments = bundle
+
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.frameLayout, listFragment)
         transaction.commit()
