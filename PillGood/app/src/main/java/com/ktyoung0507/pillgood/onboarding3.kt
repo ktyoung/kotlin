@@ -4,15 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ktyoung0507.pillgood.databinding.ActivityOnboarding2Binding
+import com.ktyoung0507.pillgood.databinding.ActivityOnboarding3Binding
 
-class onboarding2 : AppCompatActivity() {
-    val binding by lazy { ActivityOnboarding2Binding.inflate(layoutInflater) }
+class onboarding3 : AppCompatActivity() {
+    val binding by lazy { ActivityOnboarding3Binding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val intent = Intent(this, onboarding3::class.java)
-        binding.onboard2NextBtn.setOnClickListener { startActivity(intent) }
+        val intent = Intent(this, login::class.java)
+        binding.onboard3StartBtn.setOnClickListener { startActivity(intent) }
     }
 }

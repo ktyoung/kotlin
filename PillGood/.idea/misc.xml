@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/border.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_onboarding2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_onboarding3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
       </map>
     </option>
   </component>
