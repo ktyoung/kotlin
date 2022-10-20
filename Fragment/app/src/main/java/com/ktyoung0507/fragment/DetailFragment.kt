@@ -6,23 +6,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ktyoung0507.fragment.databinding.FragmentListBinding
+import com.ktyoung0507.fragment.databinding.FragmentDetailBinding
 
+class DetailFragment : Fragment() {
+    lateinit var mainActivity: MainActivity
 
-class ListFragment : Fragment() {
-    var mainActivity: MainActivity? = null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = FragmentListBinding.inflate(inflater, container, false)
-        binding.btnNext.setOnClickListener { mainActivity?.goDeatail() }
+        val binding = FragmentDetailBinding.inflate(inflater, container, false)
+        binding.btnBack.setOnClickListener { mainActivity.goBack() }
         return binding.root
     }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
-        if (context is MainActivity) mainActivity = context
+        mainActivity = context as MainActivity
     }
 }
