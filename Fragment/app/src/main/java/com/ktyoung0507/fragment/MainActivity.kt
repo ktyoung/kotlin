@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         val detailFragment = DetailFragment()
 
         val transaction = supportFragmentManager.beginTransaction()
-        
+
         transaction.add(R.id.frameLayout, detailFragment)
         transaction.addToBackStack("detail")
         transaction.commit()
