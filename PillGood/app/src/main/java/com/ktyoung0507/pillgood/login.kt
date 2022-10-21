@@ -13,10 +13,8 @@ class login : AppCompatActivity() {
         setContentView(binding.root)
 
         // 홈화면으로 이동 (메인페이지)
-        /* 홈화면 추후에 구현하기
-        val intentLogin = Intent(this, login::class.java)
+        val intentLogin = Intent(this, home::class.java)
         binding.loginLoginBtn.setOnClickListener { startActivity(intentLogin) }
-        */
 
         // 회원가입 페이지 이동
         val intentSignIn = Intent(this, signIn::class.java)

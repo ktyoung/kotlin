@@ -4,6 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/border.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/menubar_stroke.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/menubar_upper_shadow.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/stroke.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_home.xml" value="0.33" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_onboarding2.xml" value="0.36614583333333334" />
