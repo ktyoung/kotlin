@@ -8,8 +8,7 @@
     tools:context=".signIn">
 
     <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,278 +16,276 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/layout_header"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/colorHeader"
-            android:elevation="2dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:id="@+id/layout_headerContent"
+                android:id="@+id/layout_header"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_height="60dp"
+                android:background="@color/colorHeader"
+                android:elevation="2dp"
+                android:orientation="vertical">
 
-                <ImageButton
-                    android:id="@+id/layout_headerBackBtn"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="1"
-                    android:background="@color/colorHeader"
-                    android:src="@drawable/header_prev_arrow" />
-
-                <TextView
-                    android:id="@+id/layout_headerTitleSignIn"
+                <LinearLayout
+                    android:id="@+id/layout_headerContent"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginRight="65dp"
-                    android:layout_weight="2"
-                    android:background="@color/colorHeader"
-                    android:fontFamily="@font/gmarket_sans_ttf_medium"
-                    android:gravity="center"
-                    android:text="회원가입"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/signIn_inputForm"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            app:layout_constraintTop_toBottomOf="@+id/layout_header">
-
-            <EditText
-                android:id="@+id/signIn_emailForm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="#B9B9B9"
-                android:ems="10"
-                android:fontFamily="@font/gmarket_sans_ttf_light"
-                android:hint="이메일"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textColorHint="@color/black"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/signIn_pwForm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="#B9B9B9"
-                android:ems="10"
-                android:fontFamily="@font/gmarket_sans_ttf_light"
-                android:hint="비밀번호"
-                android:inputType="textPassword"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textColorHint="@color/black"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/signIn_pwChkForm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="#B9B9B9"
-                android:ems="10"
-                android:fontFamily="@font/gmarket_sans_ttf_light"
-                android:hint="비밀번호 확인"
-                android:inputType="textPassword"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textColorHint="@color/black"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/signIn_nameForm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="#B9B9B9"
-                android:ems="10"
-                android:fontFamily="@font/gmarket_sans_ttf_light"
-                android:hint="이름"
-                android:inputType="textPersonName"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textColorHint="@color/black"
-                android:textSize="14sp" />
-
-            <EditText
-                android:id="@+id/signIn_telForm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:backgroundTint="#B9B9B9"
-                android:ems="10"
-                android:fontFamily="@font/gmarket_sans_ttf_light"
-                android:hint="전화번호"
-                android:inputType="number"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:textColorHint="@color/black"
-                android:textSize="14sp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/signIn_termsForm"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="20dp"
-            android:background="#FFF7F8F9"
-            android:orientation="vertical"
-            android:padding="10dp"
-            app:layout_constraintBottom_toTopOf="@+id/signIn_signBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signIn_inputForm">
-
-            <LinearLayout
-                android:id="@+id/signIn_checkForm1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/signIn_checkAll"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="전체동의"
-                    android:textSize="12sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/signIn_checkForm2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal">
-
-                <CheckBox
-                    android:id="@+id/signIn_check2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="이용약관(필수)"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:id="@+id/signIn_contentBtn2"
-                    android:layout_width="130dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:backgroundTint="@color/black"
-                    android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="내용보기"
-                    android:textSize="12sp" />
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/layout_headerBackBtn"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:background="@color/colorHeader"
+                        android:src="@drawable/header_prev_arrow" />
+
+                    <TextView
+                        android:id="@+id/layout_headerTitleInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="65dp"
+                        android:layout_weight="2"
+                        android:background="@color/colorHeader"
+                        android:fontFamily="@font/gmarket_sans_ttf_medium"
+                        android:gravity="center"
+                        android:text="회원가입"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/signIn_checkForm3"
+                android:id="@+id/signIn_inputForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingLeft="0dp"
-                android:paddingRight="0dp">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
 
-                <CheckBox
-                    android:id="@+id/signIn_check3"
+                <EditText
+                    android:id="@+id/signIn_emailForm"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#B9B9B9"
+                    android:ems="10"
                     android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="개인정보 수집 및 이용(필수)"
-                    android:textSize="12sp" />
+                    android:hint="이메일"
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
 
-                <Button
-                    android:id="@+id/signIn_contentBtn3"
-                    android:layout_width="130dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/black"
+                <EditText
+                    android:id="@+id/signIn_pwForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#B9B9B9"
+                    android:ems="10"
                     android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="내용보기"
-                    android:textSize="12sp" />
+                    android:hint="비밀번호"
+                    android:inputType="textPassword"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/signIn_pwChkForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#B9B9B9"
+                    android:ems="10"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:hint="비밀번호 확인"
+                    android:inputType="textPassword"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/signIn_nameForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#B9B9B9"
+                    android:ems="10"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:hint="이름"
+                    android:inputType="textPersonName"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/signIn_telForm"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:backgroundTint="#B9B9B9"
+                    android:ems="10"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:hint="전화번호"
+                    android:inputType="number"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:textColorHint="@color/black"
+                    android:textSize="14sp" />
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/signIn_checkForm4"
+                android:id="@+id/signIn_termsForm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingLeft="0dp"
-                android:paddingRight="0dp">
-
-                <CheckBox
-                    android:id="@+id/signIn_check4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2"
-                    android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="마케팅 정보 수집 및 활용(선택)"
-                    android:textSize="12sp" />
-
-                <Button
-                    android:id="@+id/signIn_contentBtn4"
-                    android:layout_width="130dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/black"
-                    android:fontFamily="@font/gmarket_sans_ttf_light"
-                    android:text="내용보기"
-                    android:textSize="12sp" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/signIn_signBtn"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            tools:layout_editor_absoluteX="0dp">
-
-            <Button
-                android:id="@+id/login_signBtn"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
                 android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="30dp"
+                android:layout_marginBottom="69dp"
+                android:background="#FFF7F8F9"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:id="@+id/signIn_checkForm1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/signIn_checkAll"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="전체동의"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/signIn_checkForm2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <CheckBox
+                        android:id="@+id/signIn_check2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="이용약관(필수)"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/signIn_contentBtn2"
+                        android:layout_width="130dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/black"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="내용보기"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/signIn_checkForm3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp">
+
+                    <CheckBox
+                        android:id="@+id/signIn_check3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="개인정보 수집 및 이용(필수)"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/signIn_contentBtn3"
+                        android:layout_width="130dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/black"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="내용보기"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/signIn_checkForm4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:paddingLeft="0dp"
+                    android:paddingRight="0dp">
+
+                    <CheckBox
+                        android:id="@+id/signIn_check4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="마케팅 정보 수집 및 활용(선택)"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/signIn_contentBtn4"
+                        android:layout_width="130dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/black"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:text="내용보기"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="30dp"
-                android:layout_weight="0"
-                android:backgroundTint="@color/black"
-                android:fontFamily="@font/gmarket_sans_ttf_medium"
-                android:text="회원가입 완료"
-                android:textSize="16sp" />
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/login_signBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="0"
+                    android:backgroundTint="@color/black"
+                    android:fontFamily="@font/gmarket_sans_ttf_medium"
+                    android:text="회원가입 완료"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

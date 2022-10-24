@@ -4,15 +4,25 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/border.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/info_details_stroke.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/info_layout_radius.xml" value="0.3275" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/info_minus_resize.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/info_plus_resize.xml" value="0.367" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/info_stroke.xml" value="0.367" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/menubar_stroke.xml" value="0.367" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/menubar_upper_shadow.xml" value="0.367" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/drawable/stroke.xml" value="0.367" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_home.xml" value="0.33" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_info.xml" value="0.33" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_info_detail.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_login.xml" value="0.5" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_main2.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_medibox.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_onboarding2.xml" value="0.36614583333333334" />
-        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_onboarding3.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_onboarding3.xml" value="0.33" />
         <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/layout/activity_sign_in.xml" value="0.33" />
+        <entry key="..\:/Users/GR803/AndroidStudioProjects/PillGood/app/src/main/res/menu/bottom_bar.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>

@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillGood">
         <activity
+            android:name=".medibox"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".infoDetail"
+            android:exported="false" />
+        <activity
+            android:name=".info"
+            android:exported="false" />
+        <activity
             android:name=".home"
             android:exported="false" />
         <activity

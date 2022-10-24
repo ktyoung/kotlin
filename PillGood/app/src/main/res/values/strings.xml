@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">PillGood</string>
+    <string name="info_calcium_title">칼슘은 뼈와 신경기능에 중요합니다.</string>
+    <string name="info_calcium_text">칼슘은 대부분 뼈에 존재하며, 신경의 자극전달, 근육이나 혈관의 수축 및 이완 조절 역할을 합니다. 권장 섭취량은 대략 700~1,000mg으로 되어 있고 2,000~3,000mg 이상은 섭취하지 않는 게 좋습니다. 국민건강통계에 의하면 성인의 경우 권장 섭취량 65% 정도의 칼슘을 섭취하고 있다고 합니다. 이렇게 칼슘이 부족하면 골다공증과 골밀도 감소 그리고 혈압과 정상적인 혈액 응고 문제가 발생할 수 있습니다.</string>
 </resources>
