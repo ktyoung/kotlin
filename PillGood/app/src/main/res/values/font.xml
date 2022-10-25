@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="chipStyle" parent="TextAppearance.MaterialComponents.Chip">
+        <item name="fontFamily">@font/gmarket_sans_ttf_light</item>
+    </style>
+</resources>

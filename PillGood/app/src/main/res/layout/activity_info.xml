@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:id="@+id/layout_header"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/colorHeader"
         android:elevation="2dp"
@@ -22,15 +22,16 @@
             android:id="@+id/layout_headerContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/layout_headerBackBtn"
-                android:layout_width="100dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="0"
                 android:background="@color/colorHeader"
                 android:src="@drawable/header_prev_arrow" />
 
@@ -38,14 +39,27 @@
                 android:id="@+id/layout_headerTitleInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginRight="65dp"
-                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_weight="5"
                 android:background="@color/colorHeader"
                 android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:gravity="center"
                 android:text="영양소 정보"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/layout_applyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/gmarket_sans_ttf_light"
+                android:gravity="center"
+                android:text="설정저장"
+                android:textColor="@color/colorPrimary"
+                android:visibility="invisible" />
         </LinearLayout>
 
     </LinearLayout>
@@ -57,8 +71,7 @@
         app:layout_constraintBottom_toTopOf="@+id/home_footerLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layout_header"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintTop_toBottomOf="@+id/layout_header">
 
         <LinearLayout
             android:id="@+id/info_contents"

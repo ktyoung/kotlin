@@ -8,7 +8,7 @@
 
     <LinearLayout
         android:id="@+id/layout_header"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="60dp"
         android:background="@color/colorHeader"
         android:elevation="2dp"
@@ -21,15 +21,16 @@
             android:id="@+id/layout_headerContent"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/layout_headerBackBtn"
-                android:layout_width="130dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="0"
                 android:background="@color/colorHeader"
                 android:src="@drawable/header_prev_arrow" />
 
@@ -37,42 +38,164 @@
                 android:id="@+id/layout_headerTitleInfo"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
+                android:layout_gravity="center"
+                android:layout_weight="5"
                 android:background="@color/colorHeader"
                 android:fontFamily="@font/gmarket_sans_ttf_medium"
                 android:gravity="center"
-                android:text="영양소 정보"
+                android:text="나만의 약통"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/layout_applyText"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginLeft="7dp"
-                android:text="설정 저장" />
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/gmarket_sans_ttf_light"
+                android:gravity="center"
+                android:text="설정저장"
+                android:textColor="@color/colorPrimary"
+                android:visibility="invisible" />
         </LinearLayout>
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/medi_scrollViewBox"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
-        android:padding="30dp"
         app:layout_constraintBottom_toTopOf="@+id/home_footerLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header">
 
         <ScrollView
+            android:id="@+id/medi_editScrollView"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
             <LinearLayout
+                android:id="@+id/medi_editScrollViewContents"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" />
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/medibox_welcome"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/info_stroke"
+                    android:orientation="horizontal"
+                    android:paddingTop="15dp">
+
+                    <LinearLayout
+                        android:id="@+id/medibox_welcomLeft"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView40"
+                            android:layout_width="150dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/logo_text1" />
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/gmarket_sans_ttf_bold"
+                            android:gravity="center_vertical"
+                            android:lineSpacingExtra="8sp"
+                            android:text="김태영님,\n반가워요!"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/medibox_welcomeRight"
+                        android:layout_width="110dp"
+                        android:layout_height="110dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/medibox_emoji" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/medibox_editMedibox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp">
+
+                    <TextView
+                        android:id="@+id/medibox_modText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:fontFamily="@font/gmarket_sans_ttf_medium"
+                        android:text="약통 편집하기   >"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/medibox_editMedi1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/medibox_addMediImg1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/medibox_add_medi" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/medibox_editMedi2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/medibox_addMediImg2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/medibox_add_medi" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/medibox_editMedi3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/medibox_addMediImg3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/medibox_add_medi" />
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
         </ScrollView>
+
     </LinearLayout>
 
     <LinearLayout
@@ -147,7 +270,7 @@
                     android:adjustViewBounds="true"
                     android:background="#FFF7F8F9"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/menubar_info_on" />
+                    app:srcCompat="@drawable/menubar_info_off" />
 
                 <TextView
                     android:id="@+id/home_footerInfoText"
@@ -156,7 +279,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/gmarket_sans_ttf_light"
                     android:text="영양소 정보"
-                    android:textColor="@color/colorPrimary"
+                    android:textColor="@color/menubar_off"
                     android:textSize="10sp" />
             </LinearLayout>
 
@@ -179,7 +302,7 @@
                     android:adjustViewBounds="true"
                     android:background="#FFF7F8F9"
                     android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/menubar_medibox_off" />
+                    app:srcCompat="@drawable/menubar_medibox_on" />
 
                 <TextView
                     android:id="@+id/home_footerMediboxText"
@@ -188,7 +311,7 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/gmarket_sans_ttf_light"
                     android:text="나만의 약통"
-                    android:textColor="@color/menubar_off"
+                    android:textColor="@color/colorPrimary"
                     android:textSize="10sp" />
             </LinearLayout>
 

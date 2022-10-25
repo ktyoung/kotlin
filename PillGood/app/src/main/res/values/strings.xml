@@ -2,4 +2,27 @@
     <string name="app_name">PillGood</string>
     <string name="info_calcium_title">칼슘은 뼈와 신경기능에 중요합니다.</string>
     <string name="info_calcium_text">칼슘은 대부분 뼈에 존재하며, 신경의 자극전달, 근육이나 혈관의 수축 및 이완 조절 역할을 합니다. 권장 섭취량은 대략 700~1,000mg으로 되어 있고 2,000~3,000mg 이상은 섭취하지 않는 게 좋습니다. 국민건강통계에 의하면 성인의 경우 권장 섭취량 65% 정도의 칼슘을 섭취하고 있다고 합니다. 이렇게 칼슘이 부족하면 골다공증과 골밀도 감소 그리고 혈압과 정상적인 혈액 응고 문제가 발생할 수 있습니다.</string>
+
+    <!--영양소 등록 화면-->
+    <string name="medi_name_1">밀크씨슬</string>
+    <string name="medi_name_2">비타민B</string>
+    <string name="medi_name_3">비타민C</string>
+    <string name="medi_name_4">오메가3</string>
+    <string name="medi_name_5">칼슘</string>
+    <string name="medi_name_6">코엔자임Q10</string>
+    <string name="medi_name_7">콜라겐</string>
+    <string name="medi_name_8">프로바이오틱스</string>
+    <string name="medi_name_9">홍삼 옥타코사놀</string>
+    <string name="medi_name_10">히알루론산 스피루리나</string>
+
+    <string name="medi_text_1">1일 1회, 1회 1캡슐</string>
+    <string name="medi_text_2">1일 1회, 1회 1정</string>
+    <string name="medi_text_3">1일 1회, 1회 2정</string>
+    <string name="medi_text_4">1일 1회, 1회 1캡슐</string>
+    <string name="medi_text_5">1일 1회, 1회 2정</string>
+    <string name="medi_text_6">1일 1회, 1회 1캡슐</string>
+    <string name="medi_text_7">1일 1회, 1회 3정</string>
+    <string name="medi_text_8">1일 1회, 1회 1캡슐</string>
+    <string name="medi_text_9">1일 1회, 1회 2캡슐</string>
+    <string name="medi_text_10">1일 1회, 1회 2정</string>
 </resources>

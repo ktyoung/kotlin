@@ -7,58 +7,75 @@
     android:background="@color/white"
     tools:context=".signIn">
 
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorHeader"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layout_headerContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/layout_headerBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="0"
+                android:background="@color/colorHeader"
+                android:src="@drawable/header_prev_arrow" />
+
+            <TextView
+                android:id="@+id/layout_headerTitleInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:background="@color/colorHeader"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
+                android:gravity="center"
+                android:text="회원가입"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/layout_applyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/gmarket_sans_ttf_light"
+                android:gravity="center"
+                android:text="설정저장"
+                android:textColor="@color/colorPrimary"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/layout_header">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/layout_header"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@color/colorHeader"
-                android:elevation="2dp"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:id="@+id/layout_headerContent"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/layout_headerBackBtn"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:background="@color/colorHeader"
-                        android:src="@drawable/header_prev_arrow" />
-
-                    <TextView
-                        android:id="@+id/layout_headerTitleInfo"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginRight="65dp"
-                        android:layout_weight="2"
-                        android:background="@color/colorHeader"
-                        android:fontFamily="@font/gmarket_sans_ttf_medium"
-                        android:gravity="center"
-                        android:text="회원가입"
-                        android:textColor="@color/black"
-                        android:textSize="20sp" />
-                </LinearLayout>
-
-            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/signIn_inputForm"

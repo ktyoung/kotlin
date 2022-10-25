@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillGood">
         <activity
+            android:name=".mediboxSetRepeat"
+            android:exported="false" />
+        <activity
+            android:name=".mediboxSetAmount"
+            android:exported="false" />
+        <activity
+            android:name=".mediboxSetName"
+            android:exported="false" />
+        <activity
+            android:name=".mediboxSetDetails"
+            android:exported="false" />
+        <activity
+            android:name=".mediboxSelectMedi"
+            android:exported="false" />
+        <activity
+            android:name=".mediboxSetTime"
+            android:exported="false" />
+        <activity
+            android:name=".mediboxEdit"
+            android:exported="false" />
+        <activity
             android:name=".medibox"
             android:exported="false" />
         <activity
