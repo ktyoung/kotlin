@@ -1,5 +1,6 @@
 package com.ktyoung0507.fileio
 
+import android.util.Log
 import java.io.*
 
 class FileUtil {
@@ -9,15 +10,16 @@ class FileUtil {
 
         val reader = FileReader(file)
         val buffer = BufferedReader(reader)
-        var temp = ""
-        val result = StringBuffer()
+        var temp:String? = null
+        var result = ""
 
         while (true) {
             temp = buffer.readLine()
-            if (temp == null) break;
-            else result.append(buffer)
+            if (temp == null) break
+            else result += temp + "\n"
         }
         buffer.close()
+        reader.close()
         return result.toString()
     }
 
@@ -28,6 +30,7 @@ class FileUtil {
         }
 
         val writer = FileWriter(directory + "/" + filename)
+        Log.d("FileUtil","write dir=${directory + "/" + filename}")
         val buffer = BufferedWriter(writer)
         buffer.write(content)
         buffer.close()
