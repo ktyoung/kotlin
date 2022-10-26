@@ -66,12 +66,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/home_footerLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/layout_header">
 
         <LinearLayout
-            android:id="@+id/medibox_detailsBox"
+            android:id="@+id/medibox_repeatBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -83,54 +84,152 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/medibox_setRepeatText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:layout_marginBottom="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gmarket_sans_ttf_medium"
+                    android:text="섭취 요일을 선택하세요."
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
-                    <TextView
-                        android:id="@+id/medibox_setNameText"
+                <LinearLayout
+                    android:id="@+id/medibox_setDays"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/medibox_daySun"
+                        style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="15dp"
-                        android:layout_weight="1"
-                        android:fontFamily="@font/gmarket_sans_ttf_medium"
-                        android:text="섭취 요일을 선택하세요."
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="일요일"
                         android:textColor="@color/black"
-                        android:textSize="18sp" />
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
 
+                    <Button
+                        android:id="@+id/medibox_dayMon"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="월요일"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/medibox_dayTue"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="화요일"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/medibox_dayWen"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="수요일"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/medibox_dayThu"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="목요일"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/medibox_dayFri"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="금요일"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
+
+                    <Button
+                        android:id="@+id/medibox_daySat"
+                        style="@style/Widget.AppCompat.Button.Borderless"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:background="@drawable/button_effect"
+                        android:checkable="true"
+                        android:fontFamily="@font/gmarket_sans_ttf_light"
+                        android:gravity="center|left"
+                        android:letterSpacing="0.1"
+                        android:padding="15dp"
+                        android:stateListAnimator="@null"
+                        android:text="토요일"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:backgroundTint="@null" />
                 </LinearLayout>
 
             </LinearLayout>
-
-            <com.google.android.material.chip.ChipGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <com.google.android.material.chip.Chip
-                        android:id="@+id/chip5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/gmarket_sans_ttf_light"
-                        android:text="일요일"
-                        android:textAppearance="@style/chipStyle"
-                        app:chipBackgroundColor="@color/white"
-                        app:chipEndPadding="15dp"
-                        app:chipMinHeight="50dp"
-                        app:chipStartPadding="15dp"
-                        app:chipStrokeColor="#FFDCDCDC"
-                        app:chipStrokeWidth="1dp"
-                        style="@style/Widget.MaterialComponents.Chip.Choice"
-                        />
-
-                </LinearLayout>
-
-            </com.google.android.material.chip.ChipGroup>
 
         </LinearLayout>
     </ScrollView>
@@ -143,6 +242,7 @@
         android:elevation="2dp"
         android:gravity="bottom"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">

@@ -1,5 +1,6 @@
 package com.ktyoung0507.permission
 
+import android.Manifest
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -21,6 +22,10 @@ class MainActivity : AppCompatActivity() {
             } else {
                 finish()
             }
+        }
+
+        binding.btnCamera.setOnClickListener {
+            activityResult.launch(Manifest.permission.CAMERA)
         }
     }
 

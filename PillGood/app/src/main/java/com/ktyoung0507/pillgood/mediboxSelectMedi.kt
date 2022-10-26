@@ -11,12 +11,17 @@ class mediboxSelectMedi : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        // 상단 바 뒤로가기 버튼 클릭 시
+        // ***** intent 경로 설정 ***** //
+        // === 1. 나만의 약통 시간 설정 페이지 === //
         val intentBack = Intent(this, mediboxSetTime::class.java)
-        binding.layoutHeaderBackBtn.setOnClickListener { startActivity(intentBack) }
-
-        // 영양소 선택 시
+        // === 2. 나만의 약통 세부 설정 페이지 === //
         val intentSetDetails = Intent(this, mediboxSetDetails::class.java)
+
+
+        // ***** 버튼 및 텍스트 클릭 시 링크 설정 ***** //
+        // === 1. 상단 바 뒤로가기 버튼 클릭 시 나만의 약통 시간 설정 페이지로 이동 === //
+        binding.layoutHeaderBackBtn.setOnClickListener { startActivity(intentBack) }
+        // === 2. 영양소 선택 시 나만의 약통 세부 설정 페이지로 이동=== //
         binding.mediboxSelectBox1.setOnClickListener { startActivity(intentSetDetails) }
     }
 }

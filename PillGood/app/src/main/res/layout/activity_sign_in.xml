@@ -203,7 +203,7 @@
 
                     <CheckBox
                         android:id="@+id/signIn_check2"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:fontFamily="@font/gmarket_sans_ttf_light"
@@ -212,9 +212,8 @@
 
                     <Button
                         android:id="@+id/signIn_contentBtn2"
-                        android:layout_width="130dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:backgroundTint="@color/black"
                         android:fontFamily="@font/gmarket_sans_ttf_light"
                         android:text="내용보기"
@@ -232,7 +231,7 @@
 
                     <CheckBox
                         android:id="@+id/signIn_check3"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:fontFamily="@font/gmarket_sans_ttf_light"
@@ -241,9 +240,8 @@
 
                     <Button
                         android:id="@+id/signIn_contentBtn3"
-                        android:layout_width="130dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:backgroundTint="@color/black"
                         android:fontFamily="@font/gmarket_sans_ttf_light"
                         android:text="내용보기"
@@ -261,7 +259,7 @@
 
                     <CheckBox
                         android:id="@+id/signIn_check4"
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="2"
                         android:fontFamily="@font/gmarket_sans_ttf_light"
@@ -270,9 +268,8 @@
 
                     <Button
                         android:id="@+id/signIn_contentBtn4"
-                        android:layout_width="130dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
                         android:backgroundTint="@color/black"
                         android:fontFamily="@font/gmarket_sans_ttf_light"
                         android:text="내용보기"

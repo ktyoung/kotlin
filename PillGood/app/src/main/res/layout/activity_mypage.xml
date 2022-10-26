@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mypage"
+    android:background="@color/background_gray">
+
+    <LinearLayout
+        android:id="@+id/layout_header"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@color/colorHeader"
+        android:elevation="2dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layout_headerContent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/layout_headerBackBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_weight="0"
+                android:background="@color/colorHeader"
+                android:src="@drawable/header_prev_arrow" />
+
+            <TextView
+                android:id="@+id/layout_headerTitleInfo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="5"
+                android:background="@color/colorHeader"
+                android:fontFamily="@font/gmarket_sans_ttf_medium"
+                android:gravity="center"
+                android:text="내 정보"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/layout_applyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/gmarket_sans_ttf_light"
+                android:gravity="center"
+                android:text="설정저장"
+                android:textColor="@color/colorPrimary"
+                android:visibility="invisible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/myInfo_scrollViewBox"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/home_footerLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_header">
+
+        <ScrollView
+            android:id="@+id/myInfo_infoScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/myInfo_infoScrollViewContents"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/myInfo_meBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="30dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/myInfo_profileImg"
+                        android:layout_width="0dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/myinfo_user_icon" />
+
+                    <LinearLayout
+                        android:id="@+id/myInfo_meText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginRight="30dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/myInfo_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10sp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gmarket_sans_ttf_medium"
+                            android:gravity="center|left"
+                            android:text="김태영님"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/myInfo_email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gmarket_sans_ttf_medium"
+                            android:gravity="center|left"
+                            android:text="example@naver.com"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/myInfo_contentsBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white"
+                    android:orientation="vertical"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="15dp"
+                    android:paddingRight="30dp"
+                    android:paddingBottom="15dp">
+
+                    <LinearLayout
+                        android:id="@+id/myInfo_editInfoBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/info_stroke"
+                        android:clickable="true"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_editInfo"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_editInfoText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_medium"
+                                android:paddingTop="15dp"
+                                android:paddingBottom="15dp"
+                                android:text="회원정보관리"
+                                android:textColor="@color/black"
+                                android:textSize="18sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_editInfoBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/myInfo_customerBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/info_stroke"
+                        android:orientation="vertical"
+                        android:paddingBottom="30dp">
+
+                        <TextView
+                            android:id="@+id/myInfo_customerText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gmarket_sans_ttf_medium"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="고객지원"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_notice"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_noticeText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="공지사항"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_noticeBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_inquiry"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_inquiryText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="1:1 문의"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_inquiryBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_fqa"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_fqaText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="자주 묻는 질문"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_fqaBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/myInfo_termsBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="30dp"
+                        android:background="@drawable/info_stroke"
+                        android:orientation="vertical"
+                        android:paddingBottom="30dp">
+
+                        <TextView
+                            android:id="@+id/myInfo_termsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gmarket_sans_ttf_medium"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="약관 및 정책"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_terms"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_termText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="이용약관"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_termsBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_privacy"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_privacyText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="개인정보처리방침"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_privacyBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_marketing"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_marketingText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="마케팅 수신동의"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_marketingBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/myInfo_appBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:paddingBottom="30dp">
+
+                        <TextView
+                            android:id="@+id/myInfo_appText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/gmarket_sans_ttf_medium"
+                            android:paddingTop="15dp"
+                            android:paddingBottom="15dp"
+                            android:text="앱 정보"
+                            android:textColor="@color/black"
+                            android:textSize="18sp" />
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_version"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_versionText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="버전 정보"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/myInfo_currentVerText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:gravity="end"
+                                android:text="최신버전     "
+                                android:textColor="@color/black" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_versionBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_dev"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_devText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="개발자 정보"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                            <ImageView
+                                android:id="@+id/myInfo_devBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/medibox_arrow" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/myInfo_logout"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/myInfo_logoutText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/gmarket_sans_ttf_light"
+                                android:paddingTop="5dp"
+                                android:paddingBottom="5dp"
+                                android:text="로그아웃"
+                                android:textColor="@color/black"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/home_footerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/menubar_stroke"
+        android:elevation="2dp"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_scrollView"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/home_footerContents"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/home_footerHomeBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/home_footerHomeImg"
+                    android:layout_width="42dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="#FFF7F8F9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/menubar_home_off" />
+
+                <TextView
+                    android:id="@+id/home_footerHomeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:text="HOME"
+                    android:textColor="@color/menubar_off"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_footerInfoBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/home_footerInfoImg"
+                    android:layout_width="42dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="#FFF7F8F9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/menubar_info_off" />
+
+                <TextView
+                    android:id="@+id/home_footerInfoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:text="영양소 정보"
+                    android:textColor="@color/menubar_off"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_footerMediboxBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/home_footerMediboxImg"
+                    android:layout_width="42dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="#FFF7F8F9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/menubar_medibox_off" />
+
+                <TextView
+                    android:id="@+id/home_footerMediboxText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:text="나만의 약통"
+                    android:textColor="@color/menubar_off"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/home_footerMyInfoBox"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/home_footerMyInfoImg"
+                    android:layout_width="42dp"
+                    android:layout_height="38dp"
+                    android:layout_gravity="center|top"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:background="#FFF7F8F9"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/menubar_my_on" />
+
+                <TextView
+                    android:id="@+id/home_footerMyInfoText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/gmarket_sans_ttf_light"
+                    android:text="내 정보"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

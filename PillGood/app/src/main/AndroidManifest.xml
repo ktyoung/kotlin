@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PillGood">
         <activity
+            android:name=".myInfoEdit"
+            android:exported="false" />
+        <activity
+            android:name=".mypage"
+            android:exported="false" />
+        <activity
             android:name=".mediboxSetRepeat"
             android:exported="false" />
         <activity
