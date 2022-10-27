@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.apsy2003.harusamki">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HaruSamKi">
+        <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
+            android:name=".test"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_payment"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_pay"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_purchase"
+            android:exported="false" />
+        <activity
+            android:name=".Text"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_mypage"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_setting"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_hambuger"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Shipping"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_Community"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_review"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_product"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_indexmain"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_index"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_join"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_login"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_onboard3"
+            android:exported="false" />
+        <activity
+            android:name=".Activity_onboard2"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>

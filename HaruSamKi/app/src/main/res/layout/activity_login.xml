@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center|fill"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/head3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/body"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:src="@drawable/logo2" />
+
+        <ImageView
+            android:id="@+id/emailimg"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/email" />
+
+        <EditText
+            android:id="@+id/emailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="이메일주소를 입력해주세요."
+            android:inputType="textPersonName|textEmailSubject"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:id="@+id/lockimg"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:layout_gravity="left"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/lock" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="49dp"
+            android:hint="비밀번호를 입력해주세요."
+            android:inputType="textPassword"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/loginbtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
+            android:text="로그인하기"
+            android:textSize="12dp"
+            app:backgroundTint="#AAEC4455" />
+
+        <Button
+            android:id="@+id/joinbtn"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:text="회원가입하기"
+            android:textColor="#EC4455"
+            android:textSize="12dp"
+            app:backgroundTint="@color/white"
+            app:strokeColor="#AAEC4455"
+            app:strokeWidth="1dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/footerwrap"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="429dp"
+            android:layout_height="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/foot3" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
