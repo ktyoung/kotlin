@@ -25,14 +25,17 @@ class mypage : AppCompatActivity() {
         val intentMyPage = Intent(this, mypage::class.java)
         // === 6. 회원 정보 관리 페이지 === //
         val intentEditInfo = Intent(this, myInfoEdit::class.java)
-
+        // === 7. 로그인 페이지 === //
+        val intentLogOut = Intent(this, login::class.java)
 
         // ***** 버튼 및 텍스트 클릭 시 링크 설정 ***** //
         // === 1. 상단 바 뒤로가기 버튼 클릭 시 HOME 화면으로 이동 === //
         binding.layoutHeaderBackBtn.setOnClickListener { startActivity(intentBack) }
         // === 2. 회원 정보 관리 텍스트 클릭 시 회원 정보 관리 페이지로 이동 === //
         binding.myInfoEditInfoBox.setOnClickListener { startActivity(intentEditInfo) }
-
+        // === 3. 로그아웃 텍스트 클릭 시 로그인 페이지로 이동 === //
+        binding.myInfoLogout.setOnClickListener { startActivity(intentLogOut) }
+        binding.myInfoLogoutText.setOnClickListener { startActivity(intentLogOut) }
 
         // ***** 하단 메뉴바 링크 설정 ***** //
         // === 1. HOME으로 이동 === //
