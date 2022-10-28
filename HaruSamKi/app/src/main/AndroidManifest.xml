@@ -5,27 +5,15 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="HaruSamKi"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HaruSamKi">
         <activity
-            android:name=".Payment"
-            android:exported="false" />
-        <activity
-            android:name=".test"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_payment"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_pay"
+            android:name=".Payment_Test"
             android:exported="false" />
         <activity
             android:name=".Activity_purchase"
-            android:exported="false" />
-        <activity
-            android:name=".Text"
             android:exported="false" />
         <activity
             android:name=".Activity_mypage"
@@ -50,9 +38,6 @@
             android:exported="false" />
         <activity
             android:name=".Activity_indexmain"
-            android:exported="false" />
-        <activity
-            android:name=".Activity_index"
             android:exported="false" />
         <activity
             android:name=".Activity_join"

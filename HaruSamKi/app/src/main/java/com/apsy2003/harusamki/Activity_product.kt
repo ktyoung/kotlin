@@ -3,8 +3,6 @@ package com.apsy2003.harusamki
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.apsy2003.harusamki.databinding.ActivityCommunityBinding
-import com.apsy2003.harusamki.databinding.ActivityJoinBinding
 import com.apsy2003.harusamki.databinding.ActivityProductBinding
 
 class Activity_product : AppCompatActivity() {
@@ -24,17 +22,11 @@ class Activity_product : AppCompatActivity() {
         binding.head4.setOnClickListener{ startActivity(hamMenu)}
 
         //음식 메뉴들 선택시, 구매 링크로 연결
-        val product1 = Intent(this, Activity_purchase::class.java)
-        binding.productsection1.setOnClickListener{ startActivity(product1)}
-
-        val product2 = Intent(this,  Activity_purchase::class.java)
-        binding.productsection2.setOnClickListener{ startActivity(product2)}
-
-        val product3 = Intent(this,  Activity_purchase::class.java)
-        binding.productsection3.setOnClickListener{ startActivity(product3)}
-
-        val product4 = Intent(this,  Activity_purchase::class.java)
-        binding.productsection4.setOnClickListener{ startActivity(product4)}
+        val purchase = Intent(this, Activity_purchase::class.java)
+        binding.productsection1.setOnClickListener{ startActivity(purchase)}
+        binding.productsection2.setOnClickListener{ startActivity(purchase)}
+        binding.productsection3.setOnClickListener{ startActivity(purchase)}
+        binding.productsection4.setOnClickListener{ startActivity(purchase)}
 
         //하단 footer메뉴 링크 연결
         val Footmenu1 = Intent(this, Activity_review::class.java)

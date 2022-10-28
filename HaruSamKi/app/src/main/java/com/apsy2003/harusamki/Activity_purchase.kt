@@ -7,6 +7,7 @@ import com.apsy2003.harusamki.databinding.ActivityPurchaseBinding
 
 class Activity_purchase : AppCompatActivity() {
     val binding by lazy {ActivityPurchaseBinding.inflate(layoutInflater)}
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -20,8 +21,8 @@ class Activity_purchase : AppCompatActivity() {
         binding.head4.setOnClickListener{ startActivity(hamMenu)}
 
         //구매하기 버튼 링크 연결
-        val product = Intent(this, Payment::class.java)
-        binding.productBtn.setOnClickListener{ startActivity(product)}
+        val product = Intent(this, Payment_Test::class.java)
+        binding.productBtn.setOnClickListener { startActivity(product) }
 
         //하단 footer메뉴 링크 연결
         val Footmenu1 = Intent(this, Activity_review::class.java)

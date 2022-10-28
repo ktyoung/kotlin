@@ -7,6 +7,7 @@ import com.ktyoung0507.pillgood.databinding.ActivityMediboxEditBinding
 
 class mediboxEdit : AppCompatActivity() {
     val binding by lazy { ActivityMediboxEditBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
