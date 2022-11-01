@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ktyoung0507.pillgood.databinding.ActivityMediboxSetDetailsBinding
+import com.ktyoung0507.pillgood.memo.MainActivity
 
 class mediboxSetDetails : AppCompatActivity() {
     val binding by lazy { ActivityMediboxSetDetailsBinding.inflate(layoutInflater) }
@@ -22,6 +23,8 @@ class mediboxSetDetails : AppCompatActivity() {
         val intentSetAmount = Intent(this, mediboxSetAmount::class.java)
         // === 5. 반복 편집 페이지 === //
         val intentSetRepeat = Intent(this, mediboxSetRepeat::class.java)
+        // === 6. 메모 입력 페이지 === //
+        val intentMemo = Intent(this, MainActivity::class.java)
 
 
         // ***** 버튼 및 텍스트 클릭 시 링크 설정 ***** //
@@ -35,5 +38,7 @@ class mediboxSetDetails : AppCompatActivity() {
         binding.mediboxSetAmount.setOnClickListener { startActivity(intentSetAmount) }
         // === 5. 반복 수정하기 클릭 시 반복 편집 페이지로 이동 === //
         binding.mediboxSetRepeat.setOnClickListener { startActivity(intentSetRepeat) }
+        // === 6. 메모 입력하기 클릭 시 메모 입력 페이지로 이동 === //
+        binding.mediboxSetMemo.setOnClickListener { startActivity(intentMemo) }
     }
 }
