@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ktyoung0507.pillgood.databinding.ActivityMediboxSetDetailsBinding
-import com.ktyoung0507.pillgood.memo.MainActivity
 
 class mediboxSetDetails : AppCompatActivity() {
     val binding by lazy { ActivityMediboxSetDetailsBinding.inflate(layoutInflater) }
