@@ -23,11 +23,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Artist"
+        android:text="아티스트 이름"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlay"
         app:layout_constraintStart_toEndOf="@+id/imageAlbum"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -38,11 +36,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:text="Title"
+        android:text="음원 제목"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnPlay"
         app:layout_constraintStart_toEndOf="@+id/imageAlbum"
         app:layout_constraintTop_toBottomOf="@+id/textArtist" />
 
@@ -55,4 +51,14 @@
         android:text="00:00"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <ImageButton
+        android:id="@+id/btnPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/textDuration"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_media_play" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

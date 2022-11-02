@@ -9,6 +9,7 @@ class Music(id: String, title: String?, artist: String?, albumId: String?, durat
     var artist: String?
     var albumId: String?
     var duration: Long?
+    var isPlay = false
 
     init {
         this.id = id

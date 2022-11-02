@@ -1,14 +1,15 @@
 package com.ktyoung0507.contentresolver
 
-import android.net.Uri
+import android.media.MediaPlayer
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ktyoung0507.contentresolver.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
 
-class MusicRecyclerAdapter: RecyclerView.Adapter<Holder>() {
+class MusicRecyclerAdapter: RecyclerView.Adapter<MusicRecyclerAdapter.Holder>() {
     var musicList = mutableListOf<Music>()
+    var mediaPlayer:MediaPlayer? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val binding = ItemRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -23,20 +24,47 @@ class MusicRecyclerAdapter: RecyclerView.Adapter<Holder>() {
         val music = musicList.get(position)
         holder.setMusic(music)
     }
-}
 
-class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
-    var musicUri: Uri? = null
+    inner class Holder(val binding: ItemRecyclerBinding) : RecyclerView.ViewHolder(binding.root) {
+        var currentMusic: Music? = null
 
-    fun setMusic(music:Music) {
-        binding.run {
-            imageAlbum.setImageURI(music.getAlbumUri())
-            textArtist.text = music.artist
-            textTitle.text = music.title
+        init {
+            binding.btnPlay.setOnClickListener {
+                if (currentMusic?.isPlay == false) {
+                    if (mediaPlayer != null) {
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                    }
+                    mediaPlayer = MediaPlayer.create(itemView.context, currentMusic?.getMusicUri())
+                    mediaPlayer?.start()
+                    currentMusic?.isPlay = true
+                } else {
+                    mediaPlayer?.stop()
+                    mediaPlayer = null
+                    currentMusic?.isPlay = false
+                }
+                setPlayButton()
+            }
+        }
+
+        fun setMusic(music: Music) {
+            binding.imageAlbum.setImageURI(music.getAlbumUri())
+            binding.textArtist.text = music.artist
+            binding.textTitle.text = music.title
 
             val duration = SimpleDateFormat("mm:ss").format(music.duration)
-            textDuration.text = duration
+            binding.textDuration.text = duration
+            currentMusic = music
+            setPlayButton()
         }
-        this.musicUri = music.getMusicUri()
+
+        fun setPlayButton() {
+            if (currentMusic?.isPlay == false) {
+                binding.btnPlay.setImageResource(android.R.drawable.ic_media_play)
+            } else {
+                binding.btnPlay.setImageResource(android.R.drawable.ic_media_pause)
+            }
+        }
     }
 }
+
