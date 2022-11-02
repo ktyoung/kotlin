@@ -1,12 +1,13 @@
 package com.ktyoung0507.contentresolver
 
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ktyoung0507.contentresolver.databinding.ItemRecyclerBinding
 import java.text.SimpleDateFormat
 
-class MusicRecyclerAdapter: RecyclerView.Adapter<Holder> {
+class MusicRecyclerAdapter: RecyclerView.Adapter<Holder>() {
     var musicList = mutableListOf<Music>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
@@ -22,7 +23,6 @@ class MusicRecyclerAdapter: RecyclerView.Adapter<Holder> {
         val music = musicList.get(position)
         holder.setMusic(music)
     }
-
 }
 
 class Holder(val binding: ItemRecyclerBinding): RecyclerView.ViewHolder(binding.root) {
