@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        storagePermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) {isGranted ->
+        storagePermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted ->
             if (isGranted) {
                 startProcess()
             } else {
@@ -25,6 +25,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun startProcess() {
-        
+
     }
 }
