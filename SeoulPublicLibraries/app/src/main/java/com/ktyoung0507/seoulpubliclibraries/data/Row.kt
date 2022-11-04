@@ -1,5 +1,8 @@
 package com.ktyoung0507.seoulpubliclibraries.data
 
+import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.clustering.ClusterItem
+
 data class Row(
     val ADRES: String,
     val CODE_VALUE: String,
@@ -13,4 +16,20 @@ data class Row(
     val TEL_NO: String,
     val XCNTS: String,
     val YDNTS: String
-)
+) : ClusterItem {
+    override fun getPosition(): LatLng {
+        return LatLng(XCNTS.toDouble(), YDNTS.toDouble())
+    }
+
+    override fun getTitle(): String? {
+        return LBRRY_NAME
+    }
+
+    override fun getSnippet(): String? {
+        return ADRES
+    }
+
+    override fun hashCode(): Int {
+        return LBRRY_SEQ_NO.toInt()
+    }
+}

@@ -13,7 +13,9 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.LatLngBounds
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.maps.android.clustering.ClusterManager
 import com.ktyoung0507.seoulpubliclibraries.data.Library
+import com.ktyoung0507.seoulpubliclibraries.data.Row
 import com.ktyoung0507.seoulpubliclibraries.databinding.ActivityMapsBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,6 +25,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
+    private lateinit var clusterManager: ClusterManager<Row>
     private lateinit var mMap: GoogleMap
     private lateinit var binding: ActivityMapsBinding
 
@@ -40,6 +43,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
+        clusterManager = ClusterManager(this, mMap)
+        mMap.setOnCameraIdleListener(clusterManager)
+        mMap.setOnMarkerClickListener(clusterManager)
 
         loadLibraries()
     }
@@ -63,25 +70,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val latLngBounds = LatLngBounds.builder()
 
         for (lib in libraries.SeoulPublicLibraryInfo.row) {
+            clusterManager.addItem(lib)
+
             val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
-            val marker = MarkerOptions().position(position).title(lib.LBRRY_NAME)
-            var obj = mMap.addMarker(marker)
-            obj?.tag = lib.HMPG_URL
-
-            mMap.setOnMarkerClickListener {
-                if (it.tag != null) {
-                    var url = it.tag as String
-                    if (!url.startsWith("http")) {
-                        url = "http://${url}"
-                    }
-                    val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
-                    startActivity(intent)
-                }
-                true
-            }
-
-            latLngBounds.include(marker.position)
+            latLngBounds.include(position)
         }
+        
         val bounds = latLngBounds.build()
         val padding = 0
         val updated = CameraUpdateFactory.newLatLngBounds(bounds, padding)
