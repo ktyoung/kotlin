@@ -44,6 +44,6 @@ class MainActivity : AppCompatActivity() {
 }
 
 interface GithubService {
-    @GET("users/Kotiln/repos")
+    @GET("users/Kotlin/repos")
     fun users(): Call<Repository>
 }
