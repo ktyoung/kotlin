@@ -35,7 +35,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         binding = ActivityMapsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -75,7 +74,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val position = LatLng(lib.XCNTS.toDouble(), lib.YDNTS.toDouble())
             latLngBounds.include(position)
         }
-        
+
         val bounds = latLngBounds.build()
         val padding = 0
         val updated = CameraUpdateFactory.newLatLngBounds(bounds, padding)
