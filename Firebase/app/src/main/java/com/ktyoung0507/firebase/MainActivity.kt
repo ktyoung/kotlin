@@ -2,6 +2,7 @@ package com.ktyoung0507.firebase
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
@@ -12,7 +13,11 @@ class MainActivity : AppCompatActivity() {
 
         val database = Firebase.database
         val myRef = database.getReference("bbs")
-        myRef.child("name").setValue("Scott")
-        myRef.child("age").setValue("19")
+
+        myRef.child("name").get().addOnSuccessListener {
+            Log.d("파이어베이스", "name=${it.value}")
+        }.addOnFailureListener {
+            Log.d("파이어베이스", "name=${it}")
+        }
     }
 }
