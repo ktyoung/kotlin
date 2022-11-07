@@ -11,20 +11,15 @@ import com.google.firebase.ktx.Firebase
 import com.ktyoung0507.firebase.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    val database = Firebase.database("https://groovy-form-367500-default-rtdb.asia-southeast1.firebasedatabase.app/")
+    val myRef  = database.getReference("users")
+
     val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        val database = Firebase.database("https://groovy-form-367500-default-rtdb.asia-southeast1.firebasedatabase.app/")
-        val myRef = database.getReference("users")
-
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        fun addItem(user: User) {
-            val id = myRef.push().key!!
-            user.id = id
-            myRef.child(id).setValue(user)
-        }
         with(binding){
             btnPost.setOnClickListener {
                 val name = editName.text.toString()
@@ -51,6 +46,33 @@ class MainActivity : AppCompatActivity() {
                 print(error.message)
             }
         })
+    }
+    fun addItem(user:User) {
+        val id = myRef.push().key!!
+        user.id = id
+        myRef.child(id).setValue(user)
+    }
+    fun readData() {
+        myRef.child("name").addValueEventListener( object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                Log.d("파이어베이스", "${snapshot.value}")
+                print( snapshot.value ) // 값이 변경 될때마다 매번 호출
+            }
+            override fun onCancelled(error: DatabaseError) {
+                print( error.message )
+            }
+        })
+    }
+    fun readOnce() {
+        myRef.child("name").get().addOnSuccessListener {
+            Log.d("파이어베이스", "name=${it.value}") // 한 번 호출
+        }.addOnFailureListener {
+            Log.d("파이어베이스", "error=${it}")
+        }
+    }
+    fun write() {
+        myRef.child("name").setValue("Scott")
+        myRef.child("age").setValue(19)
     }
 }
 
