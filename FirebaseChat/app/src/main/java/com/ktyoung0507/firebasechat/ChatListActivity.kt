@@ -35,7 +35,7 @@ class ChatListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        
+
         userId = intent.getStringExtra("userId") ?: "none"
         userName = intent.getStringExtra("userName") ?: "Anonymous"
         with(binding) {
