@@ -1,5 +1,6 @@
 package com.ktyoung0507.firebasechat
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,10 +35,9 @@ class ChatListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-
+        
         userId = intent.getStringExtra("userId") ?: "none"
         userName = intent.getStringExtra("userName") ?: "Anonymous"
-
         with(binding) {
             btnCreate.setOnClickListener { openCreateRoom() }
         }
@@ -54,7 +54,7 @@ class ChatListActivity : AppCompatActivity() {
         roomsRef.addValueEventListener(object: ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 roomList.clear()
-                for (item in snapshot.children) {
+                for(item in snapshot.children) {
                     item.getValue(Room::class.java)?.let { room ->
                         roomList.add(room)
                     }
@@ -71,8 +71,8 @@ class ChatListActivity : AppCompatActivity() {
     fun openCreateRoom() {
         val editTitle = EditText(this)
         val dialog = AlertDialog.Builder(this).setTitle("방 이름").setView(editTitle).setPositiveButton("만들기") { dlg, id ->
-            createRoom(editTitle.text.toString())
-        }
+                createRoom(editTitle.text.toString())
+            }
         dialog.show()
     }
 
@@ -82,26 +82,39 @@ class ChatListActivity : AppCompatActivity() {
         room.id = roomId
         roomsRef.child(roomId).setValue(room)
     }
+}
 
-    class ChatRoomListAdapter(val roomList:MutableList<Room>): RecyclerView.Adapter<ChatRoomListAdapter.Holder>() {
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-            val view = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
-            return Holder(view)
-        }
+class ChatRoomListAdapter(val roomList:MutableList<Room>) : RecyclerView.Adapter<ChatRoomListAdapter.Holder>() {
 
-        override fun onBindViewHolder(holder: ChatRoomListAdapter.Holder, position: Int) {
-            val room = roomList.get(position)
-            holder.setRoom(room)
-        }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+        val view =LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
+        return Holder(view)
+    }
 
-        override fun getItemCount(): Int {
-            return roomList.size
-        }
+    override fun onBindViewHolder(holder: Holder, position: Int) {
+        val room = roomList.get(position)
+        holder.setRoom(room)
+    }
 
-        class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
-            fun setRoom(room:Room) {
-                itemView.findViewById<TextView>(android.R.id.text1).setText(room.title)
+    override fun getItemCount(): Int {
+        return roomList.size
+    }
+
+    class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        lateinit var mRoom:Room
+        init {
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, ChatRoomActivity::class.java)
+                intent.putExtra("roomId", mRoom.id)
+                intent.putExtra("roomTitle", mRoom.title)
+
+                itemView.context.startActivity(intent)
             }
+        }
+
+        fun setRoom(room:Room) {
+            this.mRoom = room
+            itemView.findViewById<TextView>(android.R.id.text1).setText(room.title)
         }
     }
 }
