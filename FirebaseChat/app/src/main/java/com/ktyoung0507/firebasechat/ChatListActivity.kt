@@ -2,8 +2,17 @@ package com.ktyoung0507.firebasechat
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 import com.ktyoung0507.firebasechat.databinding.ActivityChatListBinding
@@ -19,6 +28,9 @@ class ChatListActivity : AppCompatActivity() {
         var userName: String = ""
     }
 
+    val roomList = mutableListOf<Room>()
+    lateinit var adapter: ChatRoomListAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -29,6 +41,31 @@ class ChatListActivity : AppCompatActivity() {
         with(binding) {
             btnCreate.setOnClickListener { openCreateRoom() }
         }
+
+        adapter = ChatRoomListAdapter(roomList)
+        with(binding) {
+            recyclerRooms.adapter = adapter
+            recyclerRooms.layoutManager = LinearLayoutManager(baseContext)
+        }
+        loadRooms()
+    }
+
+    fun loadRooms() {
+        roomsRef.addValueEventListener(object: ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                roomList.clear()
+                for (item in snapshot.children) {
+                    item.getValue(Room::class.java)?.let { room ->
+                        roomList.add(room)
+                    }
+                }
+                adapter.notifyDataSetChanged()
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                print(error.message)
+            }
+        })
     }
 
     fun openCreateRoom() {
@@ -44,5 +81,27 @@ class ChatListActivity : AppCompatActivity() {
         val roomId = roomsRef.push().key!!
         room.id = roomId
         roomsRef.child(roomId).setValue(room)
+    }
+
+    class ChatRoomListAdapter(val roomList:MutableList<Room>): RecyclerView.Adapter<ChatRoomListAdapter.Holder>() {
+        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
+            val view = LayoutInflater.from(parent.context).inflate(android.R.layout.simple_list_item_1, parent, false)
+            return Holder(view)
+        }
+
+        override fun onBindViewHolder(holder: ChatRoomListAdapter.Holder, position: Int) {
+            val room = roomList.get(position)
+            holder.setRoom(room)
+        }
+
+        override fun getItemCount(): Int {
+            return roomList.size
+        }
+
+        class Holder(itemView: View): RecyclerView.ViewHolder(itemView) {
+            fun setRoom(room:Room) {
+                itemView.findViewById<TextView>(android.R.id.text1).setText(room.title)
+            }
+        }
     }
 }
