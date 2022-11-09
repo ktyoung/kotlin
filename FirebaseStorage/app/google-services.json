@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "754476766096",
+    "firebase_url": "https://groovy-form-367500-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "groovy-form-367500",
+    "storage_bucket": "groovy-form-367500.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754476766096:android:f2f77042f27096db079915",
+        "android_client_info": {
+          "package_name": "com.ktyoung0507.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754476766096-2artmnjn4m99umga1ns18hvhl1kuut98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJaFGHKLh3daB21bq5hSHlhI4kAhefX-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754476766096-2artmnjn4m99umga1ns18hvhl1kuut98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754476766096:android:d88d38ddff37daee079915",
+        "android_client_info": {
+          "package_name": "com.ktyoung0507.firebasechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754476766096-2artmnjn4m99umga1ns18hvhl1kuut98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJaFGHKLh3daB21bq5hSHlhI4kAhefX-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754476766096-2artmnjn4m99umga1ns18hvhl1kuut98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754476766096:android:ddc9bc2c6eb0c758079915",
+        "android_client_info": {
+          "package_name": "com.ktyoung0507.firebasestorage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754476766096-2artmnjn4m99umga1ns18hvhl1kuut98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJaFGHKLh3daB21bq5hSHlhI4kAhefX-c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754476766096-2artmnjn4m99umga1ns18hvhl1kuut98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,4 +1,4 @@
-package com.ktyoung0507.firebasechat
+package com.apsy2003.harusamki
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,13 +6,13 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
-import com.ktyoung0507.firebasechat.databinding.ActivityMainBinding
-import com.ktyoung0507.firebasechat.model.User
+import com.apsy2003.harusamki.databinding.ActivityAppLoginBinding
+import com.apsy2003.harusamki.model.User
 
-class MainActivity : AppCompatActivity() {
-    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    val database = Firebase.database("https://groovy-form-367500-default-rtdb.asia-southeast1.firebasedatabase.app/")
-    val userRef = database.getReference("users")
+class App_login : AppCompatActivity() {
+    val binding by lazy { ActivityAppLoginBinding.inflate(layoutInflater) }
+    val database = Firebase.database("https://harusamki-8f63d-default-rtdb.asia-southeast1.firebasedatabase.app/")
+    val usersRef = database.getReference("users")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +31,12 @@ class MainActivity : AppCompatActivity() {
             val name = editName.text.toString()
 
             if (id.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty()) {
-                userRef.child(id).get().addOnSuccessListener {
+                usersRef.child(id).get().addOnSuccessListener {
                     if (it.exists()) {
                         Toast.makeText(baseContext, "아이디가 존재합니다.", Toast.LENGTH_LONG).show()
                     } else {
                         val user = User(id, password, name)
-                        userRef.child(id).setValue(user)
+                        usersRef.child(id).setValue(user)
                         signin()
                     }
                 }
@@ -52,7 +52,7 @@ class MainActivity : AppCompatActivity() {
             val password = editPassword.text.toString()
 
             if (id.isNotEmpty() && password.isNotEmpty()) {
-                userRef.child(id).get().addOnSuccessListener {
+                usersRef.child(id).get().addOnSuccessListener {
                     if (it.exists()) {
                         it.getValue(User::class.java)?.let { user ->
                             if (user.password == password) {
@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goChatroomList(userId: String, userName: String) {
-        val intent = Intent(this, ChatListActivity::class.java)
+        val intent = Intent(this, CustomerChatList::class.java)
         intent.putExtra("userId", userId)
         intent.putExtra("userName", userName)
         startActivity(intent)

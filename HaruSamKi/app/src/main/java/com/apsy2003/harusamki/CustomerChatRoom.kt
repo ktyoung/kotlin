@@ -1,4 +1,4 @@
-package com.ktyoung0507.firebasechat
+package com.apsy2003.harusamki
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ktyoung0507.firebasechat.databinding.ActivityChatRoomBinding
-import com.ktyoung0507.firebasechat.databinding.ItemMsgListBinding
-import com.ktyoung0507.firebasechat.model.Message
+import com.apsy2003.harusamki.databinding.ActivityCustomerChatRoomBinding
+import com.apsy2003.harusamki.databinding.ItemMsgListBinding
+import com.apsy2003.harusamki.model.Message
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -16,9 +16,9 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
-class ChatRoomActivity : AppCompatActivity() {
-    val binding by lazy { ActivityChatRoomBinding.inflate(layoutInflater) }
-    val database = Firebase.database("https://groovy-form-367500-default-rtdb.asia-southeast1.firebasedatabase.app/")
+class CustomerChatRoom : AppCompatActivity() {
+    val binding by lazy { ActivityCustomerChatRoomBinding.inflate(layoutInflater)}
+    val database = Firebase.database("https://harusamki-8f63d-default-rtdb.asia-southeast1.firebasedatabase.app/")
     lateinit var msgRef:DatabaseReference
 
     var roomId: String = ""
@@ -70,7 +70,7 @@ class ChatRoomActivity : AppCompatActivity() {
     fun sendMsg() {
         with(binding) {
             if(editMsg.text.isNotEmpty()) {
-                val message = Message(editMsg.text.toString(), ChatListActivity.userName)
+                val message = Message(editMsg.text.toString(), CustomerChatList.userName)
                 val msgId = msgRef.push().key!!
                 message.id = msgId
                 msgRef.child(msgId).setValue(message)

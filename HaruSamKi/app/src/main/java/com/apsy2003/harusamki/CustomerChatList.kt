@@ -1,4 +1,4 @@
-package com.ktyoung0507.firebasechat
+package com.apsy2003.harusamki
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,8 +11,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.ktyoung0507.firebasechat.databinding.ActivityChatListBinding
-import com.ktyoung0507.firebasechat.model.Room
+import com.apsy2003.harusamki.databinding.ActivityCustomerChatListBinding
+import com.apsy2003.harusamki.model.Room
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -20,9 +20,9 @@ import com.google.firebase.database.ktx.database
 import com.google.firebase.ktx.Firebase
 
 
-class ChatListActivity : AppCompatActivity() {
-    val binding by lazy { ActivityChatListBinding.inflate(layoutInflater) }
-    val database = Firebase.database("https://groovy-form-367500-default-rtdb.asia-southeast1.firebasedatabase.app/")
+class CustomerChatList : AppCompatActivity() {
+    val binding by lazy { ActivityCustomerChatListBinding.inflate(layoutInflater)}
+    val database = Firebase.database("https://harusamki-8f63d-default-rtdb.asia-southeast1.firebasedatabase.app/")
     val roomsRef = database.getReference("rooms")
 
     companion object {
@@ -105,7 +105,7 @@ class ChatRoomListAdapter(val roomList:MutableList<Room>) : RecyclerView.Adapter
         lateinit var mRoom:Room
         init {
             itemView.setOnClickListener {
-                val intent = Intent(itemView.context, ChatRoomActivity::class.java)
+                val intent = Intent(itemView.context, CustomerChatRoom::class.java)
                 intent.putExtra("roomId", mRoom.id)
                 intent.putExtra("roomTitle", mRoom.title)
 
