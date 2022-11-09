@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
+import com.bumptech.glide.Glide
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.ktyoung0507.firebasestorage.databinding.ActivityMainBinding
@@ -21,6 +22,9 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnUpload.setOnClickListener {
             permissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE)
+        }
+        binding.btnDownload.setOnClickListener {
+            downloadImage("images/temp_1667955697415.jpeg")
         }
     }
 
@@ -45,6 +49,14 @@ class MainActivity : AppCompatActivity() {
             Log.d("스토리지", "실패=>${it.message}")
         }.addOnSuccessListener { taskSnapshot ->
             Log.d("스토리지", "성공 주소=>${fullPath}")
+        }
+    }
+
+    fun downloadImage(path: String) {
+        storage.getReference(path).downloadUrl.addOnSuccessListener { uri ->
+            Glide.with(this).load(uri).into(binding.imageView)
+        }.addOnFailureListener {
+            Log.e("스토리지", "다운로드 에러=>${it.message}")
         }
     }
 
